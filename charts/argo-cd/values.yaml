@@ -1,13 +1,5 @@
 argo-cd:
-<<<<<<< HEAD
-  dex:
-    enabled: false
-  notifications:
-    enabled: false
-  applicationSet:
-    enabled: false
-=======
   server:
     extraArgs:
       - --insecure
->>>>>>> 2994065 (new argo chart)
+
