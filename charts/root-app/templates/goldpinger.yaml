@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/bloomberg/goldpinger
+    repoURL: https://bloomberg.github.io/goldpinger
     chart: charts/goldpinger
     targetRevision: 1.0.1
   destination:
