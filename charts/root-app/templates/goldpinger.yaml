@@ -2,22 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: goldpinger
-  namespace: monitoring
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://helm.chartmuseum.io/goldpinger
+    repoURL: https://helm.github.io/charts
     chart: goldpinger
-    targetRevision: latest # Nebo konkrétní verze, např. "1.5.0"
-    helm:
-      values: |
-        service:
-          type: LoadBalancer
-        rbac:
-          create: true
+    targetRevision: 3.0.1
   destination:
     server: https://kubernetes.default.svc
-    namespace: goldpinger
+    namespace: default
   syncPolicy:
     automated:
       prune: true
