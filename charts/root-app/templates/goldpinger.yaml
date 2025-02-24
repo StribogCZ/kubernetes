@@ -7,8 +7,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/bloomberg/goldpinger/charts
-    chart: goldpinger
+    repoURL: https://github.com/bloomberg/goldpinger
+    chart: charts/goldpinger
     targetRevision: 3.0.1
   destination:
     server: https://kubernetes.default.svc
