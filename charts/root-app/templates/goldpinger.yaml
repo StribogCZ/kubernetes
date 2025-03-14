@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: goldpinger
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /metrics
+    prometheus.io/port: "8080"
+spec:
+  project: default
+  source:
+    repoURL: https://bloomberg.github.io/goldpinger
+    chart: goldpinger
+    targetRevision: 1.0.1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
