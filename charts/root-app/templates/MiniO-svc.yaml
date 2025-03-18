@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: MiniO-Node-Port
+  name: minio-node-port
 spec:
   selector:
     app.kubernetes.io/name: minio
